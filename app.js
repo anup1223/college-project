@@ -66,9 +66,10 @@ const sessionOptions = {
     },
 };
 
-// app.get("/", (req, res) => {
-//     res.send("Hi, I am root");
-// });
+//INDEX ROUTE REDIRECT ROUTE
+app.get("/",(req,res)=>{
+    res.redirect('/listings');
+ });
 
 
 
@@ -100,7 +101,8 @@ app.use((req, res, next) => {
 //     res.send(registeredUser);
 // });
 
-app.use("/", listingRouter);
+
+
 app.use("/listings", listingRouter);
 
 app.use("/listings/:id/reviews", reviewRouter);
