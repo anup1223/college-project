@@ -23,8 +23,35 @@
     font-size: 1rem;
   }
 
-  /* .search-input:active {
-  } */
+  .logout {
+    background-color: red;
+    color: white !important;
+    border-radius: 25px;
+  }
+  .login {
+    margin-left: 5px;
+  }
+
+  .login, .signup {
+    background-color: rgb(119, 210, 119);
+    color: black !important;
+    border-radius: 25px;
+    opacity: 0.8;
+  }
+
+  
+  .login:hover{
+    opacity: 1;
+  }
+  .signup:hover {
+    opacity: 1;
+  }
+
+  .StayNest{
+    margin-right: 5px;
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
@@ -47,13 +74,13 @@
         </div>
 
       <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/Listings/new">Airbnb your home</a> 
+        <a class="nav-link StayNest" href="/Listings/new">StayNest</a> 
         <% if(!currUser) {%>
-        <a class="nav-link" aria-current="page" href="/signup"><b>Sign up</b></a>
-        <a class="nav-link" href="/login"><b>Login</b></a>
+        <a class="nav-link signup" aria-current="page" href="/signup"><b>Sign up</b></a>
+        <a class="nav-link login" href="/login"><b>Login</b></a>
         <% } %>
         <% if(currUser) {%>
-        <a class="nav-link" href="/logout"><b>Log out</b></a> 
+        <a class="nav-link logout" href="/logout"><b>Log out</b></a> 
         <% } %>
       </div>
     </div>

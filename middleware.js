@@ -1,5 +1,6 @@
 const Listing = require("./models/listing.js");
 const Review = require("./models/review.js")
+const user = require
 const ExpressError = require("./utils/ExpressError.js");
 const {listingSchema, reviewSchema} = require("./schema.js");
 
@@ -19,6 +20,7 @@ module.exports.saveRedirectUrl = (req, res, next) => {
     next();
 };
 
+
 module.exports.isOwner = async(req, res, next) => {
     let { id } = req.params;
     let listing = await Listing.findById(id);
@@ -28,6 +30,8 @@ module.exports.isOwner = async(req, res, next) => {
     }
     next();
 }
+
+
 
 module.exports.validateListing = (req, res, next) =>{
     let {error} = listingSchema.validate(req.body);

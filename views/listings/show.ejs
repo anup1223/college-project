@@ -81,7 +81,7 @@
             <% } %>
 
             <h4><b>All Reviews</b></h4>
-            <div class="row">
+            <div class="row">                
             <% for(review of listing.reviews) { %>
             <div class="card col-5 ms-3 mb-3">
                 <div class="card-body">
@@ -90,7 +90,6 @@
                     <p class="card-text">
                         <%= review.comment %>
                     </p>
-                
                 <form action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE" class="mb-3" method="POST">
                     <button class="btn btn-sm btn-dark">Delete</button>
                 </form>
